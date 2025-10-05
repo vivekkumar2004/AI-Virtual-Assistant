@@ -21,11 +21,11 @@ export const signUp = async (req, res) => {
 
     const user = await User.create({ name, password: hashedPassword, email });
 
-    const token = await user.genToken(user._id);
+    const token = genToken(user._id);
 
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: "7*24*60*60*1000",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
       sameSite: "strict",
       secure: false,
     });
@@ -52,11 +52,11 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials!" });
     }
 
-    const token = await genToken(user._id);
+    const token = genToken(user._id);
 
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: "7*24*60*60*1000",
+      maxAge: 7*24*60*60*1000,
       sameSite: "strict",
       secure: false,
     });
