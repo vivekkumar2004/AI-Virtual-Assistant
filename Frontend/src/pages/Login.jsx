@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const { serverUrl } = useContext(UserDataContext);
+  const { serverUrl, userData, setUserData } = useContext(UserDataContext);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -29,10 +29,12 @@ function Login() {
         },
         { withCredentials: true }
       );
-      console.log(result);
+      setUserData(result.data)
       setLoading(false);
+      navigate("/")
     } catch (error) {
       console.log(error);
+      setUserData(null)
       setLoading(false)
       setError(error.response.data.message);
     }
