@@ -87,7 +87,7 @@ function Login() {
         {error.length > 0 && (
           <p className="text-red-500 text-[17px]">*{error}</p>
         )}
-        <button className="min-w-[150px] h-[60px] mt-[30px] bg-white rounded-full text-black text-[19px] font-semibold" disabled={loading}>
+        <button className="min-w-[150px] h-[60px] mt-[30px] bg-white rounded-full text-black text-[19px] font-semibold cursor-pointer" disabled={loading}>
           {loading ? "Loading..." : "Login"}
         </button>
         <p className="text-white text-[18px]">

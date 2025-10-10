@@ -59,7 +59,7 @@ function SignUp() {
                 {error.length>0 && <p className='text-red-500 text-[17px]'>
                     *{error}
                 </p>}
-                <button className='min-w-[150px] h-[60px] mt-[30px] bg-white rounded-full text-black text-[19px] font-semibold' disabled={loading}>{loading ? "Loading...": "Sign Up"}</button>
+                <button className='min-w-[150px] h-[60px] mt-[30px] bg-white rounded-full text-black text-[19px] font-semibold cursor-pointer' disabled={loading}>{loading ? "Loading...": "Sign Up"}</button>
                 <p className='text-white text-[18px]'>Already have an account ? <span className='text-blue-500 cursor-pointer' onClick={()=> navigate("/login")}>Login</span></p>
 
             </form>
