@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
+import { IoArrowBackOutline } from "react-icons/io5";
 import Card from "../components/card";
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.jpg";
@@ -30,6 +31,7 @@ const Customize = () => {
 
   return (
     <div className="w-full h-[100vh] bg-gradient-to-t from-[black] to-[#030353] flex justify-center items-center flex-col p-[20px]">
+        <IoArrowBackOutline className="absolute top-[30px] left-[30px] text-white w-[25px] h-[25px] cursor-pointer" onClick={()=> navigate("/")}/>
       <h1 className="text-white mb-[30px] text-[30px] text-center">Select your <span className="text-blue-200">Assistant Image</span></h1>
       <div className="w-[90%] max-w-[900px] flex justify-center items-center flex-wrap gap-4">
         <Card image={image1} />
