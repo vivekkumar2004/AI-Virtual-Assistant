@@ -40,7 +40,7 @@ const geminiResponse = async (command, assistantName, userName) => {
 
 
     Important:
-    - Use "{author name}" agar koi puche tume kisne bnaya
+    - Use ${userName} agar koi puche tume kisne bnaya
     - Only respond with the JSON object, nohting else.
     
     
@@ -55,7 +55,8 @@ const geminiResponse = async (command, assistantName, userName) => {
         },
       ],
     });
-    return result.data.candidates[0].content.parts[0].text;
+    console.log("Gemini API raw result:", result.data);
+    return result.data?.candidates?.[0]?.content?.parts?.[0]?.text || null;
   } catch (error) {
     console.log(error);
   }
