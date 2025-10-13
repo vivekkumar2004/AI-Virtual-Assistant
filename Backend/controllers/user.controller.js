@@ -2,6 +2,7 @@ import { response } from "express";
 import geminiResponse from "../gemini.js";
 import User from "../models/user.model.js";
 import moment from "moment";
+import uploadOnCloudinary from "../config/cloudinary.js";
 
 export const getCurrentUser = async (req, res) => {
   try {
@@ -43,6 +44,8 @@ export const askToAssistant = async (req, res) => {
   try {
     const { command } = req.body;
     const user = await User.findById(req.userId);
+    user.history.push(command)
+    user.save()
     const userName = user.name;
     const assistantName = user.assistantName;
 
@@ -107,13 +110,23 @@ export const askToAssistant = async (req, res) => {
           response: `It's ${moment().format("MMMM")}`,
         });
 
-      // ✅ Handle general or undefined cases gracefully
+      //  Handle general or undefined cases gracefully
       case "google_search":
       case "youtube_search":
-      case "youtube_play":
+      case "youtube_open":
       case "calculator_open":
       case "instagram_open":
       case "facebook_open":
+      case "linkedin_open":
+      case "x_open":
+      case "amazon_open":
+      case "amazon_search":
+      case "flipkart_open":
+      case "flipkart_search":
+      case "netflix_open":
+      case "netflix_search":
+      case "spotify_open":
+      case "spotify_search":
       case "weather_show":
       case "general":
       default:

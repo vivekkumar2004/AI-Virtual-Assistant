@@ -14,8 +14,11 @@ in the exact format below:
 {
   "type": "general" | "google_search" | "youtube_search" | "youtube_play" | 
            "get_time" | "get_date" | "get_day" | "get_month" |
-           "calculator_open" | "instagram_open" | "facebook_open" | "weather_show",
-  "userInput": "<the user’s full sentence, ignoring your name if mentioned>",
+           "calculator_open" | "instagram_open" | "facebook_open" | "weather_show" | "instagram_open"
+           | "facebook_open" | "linkedin_open" | "x_open" | "amazon_open" | "amazon_search" | "flipkart_open"
+           | "flipkart_search" | "netflix_open" | "netflix_search" | "spotify_open" | "spotify_search",
+
+  "userInput": "<the user's full sentence, ignoring your name if mentioned>",
   "response": "<a short, spoken-style reply to read out loud>"
 }
 
@@ -29,10 +32,20 @@ in the exact format below:
 - "general": for factual or normal conversation (who, what, when, where, why, how).
 - "google_search": when user asks to search something on Google.
 - "youtube_search": when user asks to search something on YouTube.
-- "youtube_play": when user asks to play a specific video or song.
 - "calculator_open": open calculator.
 - "instagram_open": open Instagram.
+- "youtube_open": open Youtube.
 - "facebook_open": open Facebook.
+- "linkedin_open": open Linkedin.
+- "x_open": open X.
+- "amazon_open": open Amazon.
+- "amazon_search": when user asks to search something on Amazon.
+- "flipkar_open": open Flipkart.
+- "flipkar_search": when user asks to search something on Flipkart.
+- "netflix_open": open Netflix.
+- "netflix_search": when user asks to search something on Netflix.
+- "spotify_open" : open Spotify.
+- "spotify_search" : when user asks to search something on Spotify.
 - "weather_show": user asks about weather.
 - "get_time": user asks for current time.
 - "get_date": user asks for today's date.
@@ -40,7 +53,7 @@ in the exact format below:
 - "get_month": user asks for the current month.
 
 ### Important:
-- If user asks “Who created you?”, reply: “I was created by ${userName}.”
+- If user asks “Who created you?”, reply: “I was created by Vivek.”
 - If user asks any factual question (who, what, when, where, why, how), 
   answer factually and directly.
 - Reply **only** with the JSON object — no explanation, no markdown, no text outside the JSON.
@@ -68,3 +81,5 @@ Now the user said: "${command}"
 };
 
 export default geminiResponse;
+
+
