@@ -59,4 +59,4 @@ const Customize = () => {
   );
 };
 
-export default Customize;
+export default Customize
