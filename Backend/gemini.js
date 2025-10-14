@@ -40,8 +40,8 @@ in the exact format below:
 - "x_open": open X.
 - "amazon_open": open Amazon.
 - "amazon_search": when user asks to search something on Amazon.
-- "flipkar_open": open Flipkart.
-- "flipkar_search": when user asks to search something on Flipkart.
+- "flipkart_open": open Flipkart.
+- "flipkart_search": when user asks to search something on Flipkart.
 - "netflix_open": open Netflix.
 - "netflix_search": when user asks to search something on Netflix.
 - "spotify_open" : open Spotify.
